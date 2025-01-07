@@ -1,11 +1,8 @@
 package ca.etsmtl.taf.entity;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
-import io.jsonwebtoken.lang.Arrays;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -60,7 +57,6 @@ public class User {
         inverseJoinColumns = @JoinColumn(name = "role_id"))
   private Set<Role> roles = new HashSet<>();
 
-  
   public User() {
   }
 
@@ -70,14 +66,4 @@ public class User {
     this.email = email;
     this.password = password;
   }
-
-  public void setRoles(Set<Role> roles){}
-  public Set<Role> getRoles(){return new HashSet();}
-  public long getId(){return 1;}
-  public String getFullName(){return "";}
-  public String getUsername(){return "";}
-  public String getEmail(){return "";}
-  public String getPassword(){return "";}
-
-  
 }

@@ -1,10 +1,9 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import { FormBuilder, FormControl } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import {testModel} from "../../../models/test-model";
 import {TestApiService} from "../../../_services/test-api.service";
 import {testModel2}  from "../../../models/testmodel2";
-import { MatSelectChange } from '@angular/material/select';
 
 
 @Component({
@@ -20,9 +19,6 @@ export class AddTestDialogComponent implements OnInit {
   responseTime: any;
   statusCode: any;
   expectedOutput: any;
-  authorization: string = "no_auth";
-  bearerToken: string = '';
-  bearer_token_control: FormControl = new FormControl('');
 
   hide = true;
   errorMessage: string |undefined;
@@ -88,9 +84,7 @@ export class AddTestDialogComponent implements OnInit {
       input:"",
       statusCode: this.statusCode,
       headers: {},
-      expectedHeaders: {},
-      authorization: this.authorization,
-      bearerToken: "Bearer " + this.bearerToken
+      expectedHeaders: {}
     };
 
     this.headerRequest.forEach((pair) => {

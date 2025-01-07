@@ -25,7 +25,6 @@ public class RequestController {
 
     public RequestController(TestApiRequest request) {
         this.request = request;
-        // System.out.println("requestttttttttttttttttttttt "+ this.request.toString());
         this.httpRequest = given()
                 .header("Content-Type", "application/json")
                 .headers(this.request.getHeaders())
